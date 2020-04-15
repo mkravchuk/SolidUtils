@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{047989B3-9258-417B-B95B-1553291192E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SolidUtils</RootNamespace>
+    <AssemblyName>SolidUtils</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\SolidQuad_BIN\SolidUtils\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\SolidQuad_BIN\SolidUtils\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="RhinoCommon">
+      <HintPath>C:\Program Files\Rhinoceros 5 (64-bit)\System\RhinoCommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\GenericCommand.cs" />
+    <Compile Include="ComponentProblem\ComponentProblem.cs" />
+    <Compile Include="ComponentProblem\ComponentProblemTypes.cs" />
+    <Compile Include="ComponentProblem\FixWhat.cs" />
+    <Compile Include="ComponentProblem\MeshProblemFinder.cs" />
+    <Compile Include="ComposeDecompose\Composer.cs" />
+    <Compile Include="ComposeDecompose\Decomposer.cs" />
+    <Compile Include="ComposeDecompose\RhinoObjectsLayerFixer.cs" />
+    <Compile Include="ComposeDecompose\RhinoObjectsGroupFixer.cs" />
+    <Compile Include="Conduit\ConduitTextDownRightCorver.cs" />
+    <Compile Include="Conduit\DeviationConduit.cs" />
+    <Compile Include="DisplayModes\DisplayModesManager.cs" />
+    <Compile Include="EnumInfo.cs" />
+    <Compile Include="Exceptions\FailedToFixIssue.cs" />
+    <Compile Include="Extensions\_Process.cs" />
+    <Compile Include="Extensions\_BoundingBox.cs" />
+    <Compile Include="Extensions\_Extrusion.cs" />
+    <Compile Include="Extensions\_CurveNormalized.cs" />
+    <Compile Include="Extensions\_SurfaceKinks.cs" />
+    <Compile Include="Extensions\_CurveKinks.cs" />
+    <Compile Include="Extensions\_CurveEnd.cs" />
+    <Compile Include="Extensions\_RhinoDoc.cs" />
+    <Compile Include="Extensions\_NurbsCurvePointList.cs" />
+    <Compile Include="Extensions\_NurbsCurve.cs" />
+    <Compile Include="Extensions\_ThreadSafety.cs" />
+    <Compile Include="Extensions\_CurveSimplify.cs" />
+    <Compile Include="Extensions\_Array.cs" />
+    <Compile Include="Extensions\_BrepEdge.cs" />
+    <Compile Include="Extensions\_BrepLoop.cs" />
+    <Compile Include="Extensions\_BrepVertex.cs" />
+    <Compile Include="Extensions\_Surface_FixSurfacePoints.cs" />
+    <Compile Include="Extensions\_BrepTrim.cs" />
+    <Compile Include="Extensions\_Linq.cs" />
+    <Compile Include="Extensions\_RhinoObject.cs" />
+    <Compile Include="Extensions\_ObjectTable.cs" />
+    <Compile Include="Extensions\_CurveZigZagCleaner.cs" />
+    <Compile Include="Extensions\_Vector3d.cs" />
+    <Compile Include="Extensions\_File.cs" />
+    <Compile Include="Extensions\_String.cs" />
+    <Compile Include="Extensions\_UserControl.cs" />
+    <Compile Include="Extensions\_Int.cs" />
+    <Compile Include="Extensions\_BrepFace.cs" />
+    <Compile Include="Extensions\_Layer.cs" />
+    <Compile Include="Extensions\_Brep.cs" />
+    <Compile Include="Extensions\_BrepTrimList.cs" />
+    <Compile Include="Extensions\_Surface.cs" />
+    <Compile Include="Extensions\_Point3d.cs" />
+    <Compile Include="Extensions\_Point2d.cs" />
+    <Compile Include="Extensions\_.cs" />
+    <Compile Include="FastLinkedList.cs" />
+    <Compile Include="GUI\ColoredProgress\ColoredProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ColoredProgress\ColoredProgress.Designer.cs">
+      <DependentUpon>ColoredProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ColoredProgress\LabelTransparent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\ColoredProgress\NativeWinAPI.cs" />
+    <Compile Include="Extensions\ForeachParallel.cs" />
+    <Compile Include="GUI\StatusListProgress\StatusCollection.cs" />
+    <Compile Include="GUI\StatusListProgress\StatusItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\StatusListProgress\StatusItem.Designer.cs">
+      <DependentUpon>StatusItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StatusListProgress\StatusItemConverter.cs" />
+    <Compile Include="GUI\StatusListProgress\StatusList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\StatusListProgress\StatusList.Designer.cs">
+      <DependentUpon>StatusList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StatusListProgress\StatusListDesigner.cs" />
+    <Compile Include="GUI\ColoredProgress\ToolStripEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Windows7Taskbar.cs" />
+    <Compile Include="Issue\IssueSeverityType.cs" />
+    <Compile Include="Issue\IssueWeight.cs" />
+    <Compile Include="LayerUtils\BaseLayer.cs" />
+    <Compile Include="Logger\g.cs" />
+    <Compile Include="Logger\log.cs" />
+    <Compile Include="Options\GlobalOptions.cs" />
+    <Compile Include="Issue\IssueOptions.cs" />
+    <Compile Include="Options\OptionBase.cs" />
+    <Compile Include="Options\OptionEnum.cs" />
+    <Compile Include="Options\OptionDouble.cs" />
+    <Compile Include="Options\OptionInt.cs" />
+    <Compile Include="Options\OptionControlsScaleDPI.cs" />
+    <Compile Include="Options\OptionObjectListView.cs" />
+    <Compile Include="Options\OptionsGUIPopulator.cs" />
+    <Compile Include="Options\OptionStrList.cs" />
+    <Compile Include="Options\OptionStr.cs" />
+    <Compile Include="Options\OptionBool.cs" />
+    <Compile Include="Options\OptionZoom.cs" />
+    <Compile Include="Options\ResourceOptions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceOptions.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Options\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Percent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared.cs" />
+    <Compile Include="UndoGroup.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Viewport.cs" />
+    <Compile Include="Extensions\_Double.cs" />
+    <Compile Include="Extensions\_Curve.cs" />
+    <Compile Include="LayerUtils\LayerMethods.cs" />
+    <Compile Include="LayerUtils\LayerIndexes.cs" />
+    <Compile Include="LayerUtils\Layers.cs" />
+    <Compile Include="Win32.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DisplayModes\SolidFix_Ghosted.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\box.png" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\delete_disabled.png" />
+    <Content Include="Resources\delete_gray.png" />
+    <Content Include="Resources\down.png" />
+    <Content Include="Resources\fav.png" />
+    <Content Include="Resources\file\file.png" />
+    <Content Include="Resources\file\file_green.png" />
+    <Content Include="Resources\file\file_red.png" />
+    <Content Include="Resources\file\folder.png" />
+    <Content Include="Resources\file\open.png" />
+    <Content Include="Resources\file\open2.png" />
+    <Content Include="Resources\file\save.png" />
+    <Content Include="Resources\file\save_disabled.png" />
+    <Content Include="Resources\groups.png" />
+    <Content Include="Resources\hand.png" />
+    <Content Include="Resources\help.png" />
+    <Content Include="Resources\line.png" />
+    <Content Include="Resources\mesh.png" />
+    <Content Include="Resources\movie.png" />
+    <Content Include="Resources\music.png" />
+    <Content Include="Resources\objType\objType_Brep.png" />
+    <Content Include="Resources\objType\objType_Curve.png" />
+    <Content Include="Resources\objType\objType_CurveConnection.png" />
+    <Content Include="Resources\objType\objType_CurveCurvature.png" />
+    <Content Include="Resources\objType\objType_CurveCurvature2.png" />
+    <Content Include="Resources\objType\objType_CurveCurvature3.png" />
+    <Content Include="Resources\objType\objType_CurveJoined.png" />
+    <Content Include="Resources\objType\objType_CurveRedundand.png" />
+    <Content Include="Resources\objType\objType_Surface.png" />
+    <Content Include="Resources\objType\objType_SurfaceNormal.png" />
+    <Content Include="Resources\objType\objType_SurfaceUV.png" />
+    <None Include="App.config" />
+    <None Include="Resources\options\checkbox-checked2.png" />
+    <None Include="Resources\options\checkbox-unchecked2.png" />
+    <None Include="Resources\options\checkbox-checked3.png" />
+    <None Include="Resources\options\checkbox-checked4.png" />
+    <None Include="Resources\options\checkbox-unchecked4.png" />
+    <None Include="Resources\options\checkbox-checked5.png" />
+    <None Include="Resources\options\checkbox-checked6.png" />
+    <None Include="Resources\options\checkbox-unchecked5.png" />
+    <None Include="Resources\options\checkbox-unchecked6.png" />
+    <None Include="Resources\options\checkbox-checked7.png" />
+    <None Include="Resources\options\checkbox-checked8.png" />
+    <None Include="Resources\options\checkbox-checked9.png" />
+    <None Include="Resources\options\radiobox-checked.png" />
+    <None Include="Resources\options\radiobox-unchecked.png" />
+    <None Include="Resources\options\radiobox-checked2.png" />
+    <Content Include="Resources\options_disabled.png" />
+    <Content Include="Resources\options_white.png" />
+    <Content Include="Resources\puzzle.png" />
+    <Content Include="Resources\question_hint.png" />
+    <Content Include="Resources\solid_box.png" />
+    <Content Include="Resources\star.png" />
+    <Content Include="Resources\state\check.png" />
+    <Content Include="Resources\state\check_green.png" />
+    <Content Include="Resources\state\check_OK.png" />
+    <Content Include="Resources\state\dot_black.png" />
+    <Content Include="Resources\state\dot_green.png" />
+    <Content Include="Resources\state\dot_red.png" />
+    <Content Include="Resources\state\error.png" />
+    <Content Include="Resources\state\stat_disabled.png" />
+    <Content Include="Resources\state\stat_green.png" />
+    <Content Include="Resources\state\stat_red.png" />
+    <Content Include="Resources\state\stat_white.png" />
+    <Content Include="Resources\state\stat_yellow.png" />
+    <Content Include="Resources\state\warning.png" />
+    <Content Include="Resources\state\warning_green.png" />
+    <Content Include="Resources\state\warning_message.png" />
+    <Content Include="Resources\surface_analizy.png" />
+    <Content Include="Resources\toolbar\bars.png" />
+    <Content Include="Resources\toolbar\fix.png" />
+    <Content Include="Resources\toolbar\fix2.png" />
+    <Content Include="Resources\toolbar\info.png" />
+    <Content Include="Resources\toolbar\receipt.png" />
+    <Content Include="Resources\toolbar\refresh.png" />
+    <Content Include="Resources\toolbar\send_letter.png" />
+    <Content Include="Resources\toolbar\sub_blue_next.png" />
+    <Content Include="Resources\toolbar\sub_blue_prev.png" />
+    <Content Include="Resources\toold_blue.png" />
+    <Content Include="Resources\toold_disabled.png" />
+    <Content Include="Resources\tool_gray.png" />
+    <Content Include="Resources\undo.png" />
+    <Content Include="Resources\view_blue.png" />
+    <Content Include="Resources\view_gray.png" />
+    <Content Include="DisplayModes\SolidFix_TopologyColoredSurfaces.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="DocTemplates\NewDocTemplateWhenConvertingTo3dm.3dm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DocTemplates\NewDocTemplateWhenConvertingTo3dm_1view.3dm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DocTemplates\NewDocTemplateWhenConvertingTo3dm_4views.3dm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\bar\bar_5.png" />
+    <None Include="Resources\bar\bar_4.png" />
+    <None Include="Resources\bar\bar_3.png" />
+    <None Include="Resources\bar\bar_2.png" />
+    <None Include="Resources\bar\bar_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DisplayModes\SolidFix_Topology.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="S:\ObjectListViewDemo\ObjectListView\ObjectListView2012.csproj">
+      <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
+      <Name>ObjectListView2012</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUI\ColoredProgress\ColoredProgress.resx">
+      <DependentUpon>ColoredProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\ResourceOptions.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceOptions.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
